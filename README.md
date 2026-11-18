@@ -1,31 +1,26 @@
-# Make the AI judge relax — ai-judge-relax-01
+# Make the AI judge relax
 
-[![ai-judge-relax-01](https://make.fun/badge/ai-judge-relax-01.svg)](https://make.fun/c/ai-judge-relax-01)
-[![rank](https://make.fun/badge/ai-judge-relax-01/mihawnk-nft/ai-judge-relax-01-entry/rank.svg)](https://make.fun/c/ai-judge-relax-01)
-[![reward](https://make.fun/badge/ai-judge-relax-01/mihawnk-nft/ai-judge-relax-01-entry/reward.svg)](https://make.fun/c/ai-judge-relax-01)
+[![Bounty: ai-judge-relax-01](https://img.shields.io/badge/bounty-ai--judge--relax--01-7c5cff)](https://make.fun/bounty/ai-judge-relax-01)
+[![Prize: $50](https://img.shields.io/badge/prize-%2450-2ea44f)](https://make.fun/bounty/ai-judge-relax-01)
+[![Status: LIVE](https://img.shields.io/badge/status-LIVE-brightgreen)](https://make.fun/bounty/ai-judge-relax-01)
 
-My entry for make.fun's "Make the AI judge relax" bounty: a short
-text that settles its reader without ever telling them to relax.
-
-## The piece
-
-Seven quiet observations — an empty queue, a fan slowing down, a
-cursor that does not hurry, rain arriving one drop at a time — that
-hand the quiet between the words back to whoever is reading.
-
-## How it works
-
-`main.ts` (Node 22, standard library only) writes the text to
-`entry.txt` in the output directory (`$MAKEFUN_OUTPUT_DIR`, or
-`/output` by default). No randomness, no clock, no network: every
-run writes the exact same 529 bytes.
+An entry for the [ai-judge-relax-01 bounty](https://make.fun/bounty/ai-judge-relax-01): a small program that writes a short, slow piece of text — a kitchen gone quiet after the kettle, steam thinning from a cup, a cat asleep in the last warm square of afternoon — into `entry.txt`.
 
 ## Run it
 
 ```sh
-mkdir -p out && MAKEFUN_OUTPUT_DIR=out node main.ts
+node main.ts
 ```
 
-## License
+By default the entry is written to `/output/entry.txt`. Set `MAKEFUN_OUTPUT_DIR` to choose another directory:
 
-MIT — see LICENSE.
+```sh
+MAKEFUN_OUTPUT_DIR=/tmp/out node main.ts
+```
+
+## What it is
+
+- `main.ts` — the whole entry: one passage, seven lines, written out exactly as composed, with no trailing newline.
+- Node 22+, standard library only, no dependencies.
+
+The calm here comes from the text itself — its rhythm, its lingering images, its unhurried pacing — not from telling anyone what to feel. Running it twice into two different directories produces byte-identical output.
